@@ -67,6 +67,43 @@ This tutorial outlines the implementation of on-premises Active Directory within
 </p>
 <br />
 
+
+<p>
+<img src="https://i.imgur.com/7XQaEBN.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+🖥️ Step 2: Set Up the Client VM (Client-1)
+
+1. **Create a new Virtual Machine**:
+   - **Name**: `Client-1`
+   - **OS**: Windows 10
+   - **Username**: `yourchoice`
+   - **Password**: `yourchoice`
+   - **Region & VNet**: Use the **same region** and **Virtual Network** as `DC-1`.
+
+2. **Update DNS Settings**:
+   - Go to `Client-1` → Networking → Network Interface → DNS Servers.
+   - Set **DNS to custom** and input **DC-1’s Private IP Address**. In this case above in the picture it was 10.0.0.4
+
+3. **Restart Client-1** from the Azure Portal to apply DNS changes.
+
+---
+
+</p>
+<br />
+
+
+<p>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+---
+
+</p>
+<br />
+
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
