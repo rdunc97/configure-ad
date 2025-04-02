@@ -94,20 +94,32 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
+🧪 Step 3: Test the Connection
+
+1. **Login to Client-1 via RDP**
+2. **Test Network Connectivity**:
+   - Open **Command Prompt**.
+   - Run:
+     ```bash
+     ping <DC-1-Private-IP>
+     ```
+   - Ensure you get replies.
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+<img src="https://i.imgur.com/UFrOppc.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+
+3. **Verify DNS Settings**:
+   - Open **PowerShell** and run:
+     ```powershell
+     ipconfig /all
+     ```
+   - Confirm that the DNS server listed matches **DC-1’s Private IP address**.
+
+<p>
+<img src="https://i.imgur.com/CdPWRVx.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
 
 ---
 
-</p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 </p>
 <br />
