@@ -88,6 +88,16 @@ This tutorial outlines the implementation of on-premises Active Directory within
    - Go to `Client-1` → Networking → Network Interface → DNS Servers.
    - Set **DNS to custom** and input **DC-1’s Private IP Address**. In this case above in the picture it was 10.0.0.4
 
+BEFORE DNS CHANGE
+<p>
+<img src="https://i.imgur.com/d2MjRg0.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+
+AFTER DNS CHANGE
+<p>
+<img src="https://i.imgur.com/vp6cywx.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+
 3. **Restart Client-1** from the Azure Portal to apply DNS changes.
 
 ---
