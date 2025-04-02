@@ -105,7 +105,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
      ```
    - Ensure you get replies.
 <p>
-<img src="https://i.imgur.com/UFrOppc.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/UFrOppc.png" height="50%" width="50%" alt="Disk Sanitization Steps"/>
 </p>
 
 3. **Verify DNS Settings**:
@@ -116,7 +116,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
    - Confirm that the DNS server listed matches **DC-1’s Private IP address**.
 
 <p>
-<img src="https://i.imgur.com/CdPWRVx.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/CdPWRVx.png" height="50%" width="50%" alt="Disk Sanitization Steps"/>
 </p>
 
 ---
