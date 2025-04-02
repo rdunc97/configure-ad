@@ -22,8 +22,11 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 - Configure Domain Controller in Azure
 - Configure Client VM in Azure 
-- Step 3
-- Step 4
+- Make sure Domain Controller's NIC IP is set to static, and note the IP
+- Set the Client VM's DNS settings to the Domain Controller's static IP address
+- Verify using Powershell in the Client VM that the DNS settings are correct
+
+---
 
 <h2>Deployment and Configuration Steps</h2>
 
