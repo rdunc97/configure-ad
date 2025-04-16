@@ -136,3 +136,114 @@ AFTER DNS CHANGE
 
 </p>
 <br />
+
+
+
+<h1> 🏢 Active Directory Deployment Part 2: Domain Setup and Client Join </h1>
+This tutorial outlines the implementation of on-premises Active Directory within Azure Virtual Machines.
+
+---
+<br />
+
+
+
+<p>
+🛠️ Step 1: Install Active Directory on DC-1
+
+1. Log into your **DC-1** VM.
+2. Open **Server Manager**.
+3. Click **Manage > Add Roles and Features**.
+4. Install **Active Directory Domain Services (AD DS)**.
+5. After installation, click the yellow warning icon in Server Manager to **Promote this server to a domain controller**.
+6. Choose **"Add a new forest"** and enter:
+   ```
+   mydomain.com
+   ```
+   *(You can use any name, just remember it)*
+
+7. Complete the wizard and let the server **restart**.
+8. After reboot, log in using:
+   ```
+   mydomain.com\labuser
+   ```
+
+---
+</p>
+
+<br />
+
+
+
+<p>
+👤 Step 2: Create a Domain Admin User
+
+1. Open **Active Directory Users and Computers (ADUC)**.
+2. Right-click your domain name → **New > Organizational Unit (OU)**:
+   - Name: `_EMPLOYEES`
+3. Create another OU:
+   - Name: `_ADMINS`
+
+4. Inside `_ADMINS`, right-click → **New > User**:
+   - Full Name: `Jane Doe`
+   - Username: `jane_admin`
+   - Password: `Cyberlab123!`
+
+5. After creating the user:
+   - Right-click `jane_admin` → **Add to a group**
+   - Type: `Domain Admins` → Click OK
+
+6. Log out of `labuser` and log in using:
+   ```
+   mydomain.com\jane_admin
+   ```
+
+> ✅ Use `jane_admin` for all admin tasks going forward.
+<p> <img src="https://i.imgur.com/ZSnFNdN.png" height="45%" width="45%" alt="Disk Sanitization Steps"/> </p>
+
+---
+</p>
+
+<br />
+
+
+
+<p>
+🖥️ Step 3: Join Client-1 to the Domain
+
+1. Log into **Client-1** using:
+   ```
+   labuser / Cyberlab123!
+   ```
+2. Open **System Settings > About > Rename this PC (advanced)**.
+3. Click **Change** and set:
+   - **Member of Domain**: `mydomain.com`
+4. Provide credentials when prompted:
+   - Username: `mydomain.com\jane_admin`
+   - Password: `Cyberlab123!`
+
+5. After restart, the computer will be domain-joined.
+<p> <img src="https://i.imgur.com/dUXTOLx.png" height="45%" width="45%" alt="Disk Sanitization Steps"/> </p>
+
+---
+</p>
+
+<br />
+
+
+
+<p>
+✅ Step 4: Verify and Organize in ADUC
+
+1. Back on **DC-1**, open **ADUC** again.
+2. Verify that **Client-1** appears under **Computers**.
+3. Create a new OU:
+   - Name: `_CLIENTS`
+4. Drag `Client-1` into the `_CLIENTS` OU.
+<p> <img src="https://i.imgur.com/H7bgCzJ.png" height="60%" width="60%" alt="Disk Sanitization Steps"/> </p>
+
+---
+</p>
+
+<br />
+
+
