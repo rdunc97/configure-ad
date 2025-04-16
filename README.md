@@ -247,3 +247,97 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <br />
 
 
+
+
+
+<h1> 🧑‍💻 Active Directory Deployment – Part 3: Remote Desktop Access & Bulk User Creation </h1>
+In this part, you'll configure Remote Desktop access for non-admin users and create multiple AD users using a PowerShell script.
+
+---
+<br />
+
+
+<p>
+🖥️ Step 1: Enable Remote Desktop Access for Domain Users on Client-1
+
+1. Log into **Client-1** as:
+   ```
+   mydomain.com\jane_admin
+   ```
+
+2. Open **System Properties**:
+   - Right-click **This PC** → **Properties** → Click **Remote Desktop settings**
+
+3. Under **Remote Desktop**, click **Select users that can remotely access this PC**.
+
+4. Click **Add**, then type:
+   ```
+   domain users
+   ```
+   Click **Check Names**, then **OK**.
+
+✅ You’ve now allowed any domain user to use Remote Desktop to connect to Client-1.
+
+> 💡 In production, this is typically managed using **Group Policy Objects (GPOs)** for scale and consistency across multiple machines.
+
+<p> <img src="https://i.imgur.com/geolsRC.png" height="50%" width="50%" alt="Disk Sanitization Steps"/> </p>
+
+---
+</p>
+
+<br />
+
+
+
+<p>
+👥 Step 2: Bulk Create Domain Users via PowerShell
+
+### 🔐 Log into DC-1 as:
+
+```
+mydomain.com\jane_admin
+```
+
+1. Open **PowerShell ISE** as Administrator.
+2. Create a **new file**, then paste the user creation script contents into it.
+   *(Your script should define multiple users and assign them to the `_EMPLOYEES` OU)*
+
+3. Run the script by pressing **F5** or clicking **Run Script**.
+
+4. After execution, open **Active Directory Users and Computers (ADUC)** and navigate to:
+   ```
+   _EMPLOYEES
+   ```
+   You should see the new users created by the script.
+<p> <img src="https://i.imgur.com/lXe4w1k.png" height="50%" width="50%" alt="Disk Sanitization Steps"/> </p>
+
+<p> <img src="https://i.imgur.com/KbHW0sx.png" height="50%" width="50%" alt="Disk Sanitization Steps"/> </p>
+
+---
+</p>
+
+<br />
+
+
+
+<p>
+🔐 Step 3: Test Login with a New User
+
+1. From your local machine or another system, use **Remote Desktop** to connect to **Client-1**.
+2. Log in as one of the new users you just created:
+   ```
+   mydomain.com\new_user
+   ```
+   - Use the password specified in the script.
+
+3. You should now be successfully logged into **Client-1** as a non-admin domain user.
+
+<p> <img src="https://i.imgur.com/A7KKIf0.png" height="50%" width="50%" alt="Disk Sanitization Steps"/> </p>
+
+<p> <img src="https://i.imgur.com/FLDQGWH.png" height="30%" width="30%" alt="Disk Sanitization Steps"/> </p>
+
+---
+</p>
+
+<br />
+
